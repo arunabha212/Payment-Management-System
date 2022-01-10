@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="order-list">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="order-items" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="details" type="xs:string"></xs:element>
+<xs:element name="quantity" type="xs:integer"></xs:element>
+<xs:element name="price" type="amount"></xs:element>
+<xs:element name="payment-status" type="paystring"></xs:element>
+<xs:element name="duration" type="xs:string"></xs:element>
+<xs:element name="date" type="xs:date"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:simpleType name="paystring">
+<xs:restriction base="xs:string">
+<xs:pattern value="pending|success"/>
+</xs:restriction>
+</xs:simpleType>
+	<xs:simpleType name="amount">
+	<xs:restriction base="xs:integer">
+		<xs:minInclusive value="0"></xs:minInclusive>
+	</xs:restriction>
+</xs:simpleType>
+</xs:schema>
