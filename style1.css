@@ -303,6 +303,7 @@ table.bill{
 .parent{
   display:flex;
   padding-top: 100px;
+  justify-content: center;
 }
 .child-container{
   text-align:center;
@@ -548,7 +549,7 @@ a.tab-btn:hover{
 
 .video{
  display:flex;
-margin:0 auto;
+ margin:0 auto;
 margin-bottom: 250px;
 justify-content: center;
 }
