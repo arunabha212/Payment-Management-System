@@ -60,27 +60,11 @@
     <Designation>employee</Designation>
   </Employee>
    <Employee ID="8">
-    <NAME>Nupur Goswami</NAME>
-    <AGE>47</AGE>
-    <SALARY>95000</SALARY>
-    <EMAIL>mpgoswami@cmp.in</EMAIL>
-    <MobNum>7894562103</MobNum>
-    <Designation>manager</Designation>
-  </Employee>
-   <Employee ID="9">
-    <NAME>Yashika Jaiswal</NAME>
-    <AGE>39</AGE>
+    <NAME>Ramesh Jain</NAME>
+    <AGE>35</AGE>
     <SALARY>75000</SALARY>
-    <EMAIL>yaskj@cmp.in</EMAIL>
-    <MobNum>8654221002</MobNum>
+    <EMAIL>rmjain@cmp.in</EMAIL>
+    <MobNum>8655972530</MobNum>
     <Designation>employee</Designation>
-  </Employee>
-   <Employee ID="10">
-    <NAME>Neeraj kar</NAME>
-    <AGE>42</AGE>
-    <SALARY>105000</SALARY>
-    <EMAIL>neeraj@cmp.in</EMAIL>
-    <MobNum>8895467210</MobNum>
-    <Designation>manager</Designation>
   </Employee>
 </Company>
