@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Company xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="emp_cat1.xsd">
+  <Employee ID="0">
+    <NAME>NAME</NAME>
+    <AGE>0</AGE>
+    <SALARY>0</SALARY>
+    <EMAIL>EMAIL</EMAIL>
+    <MobNum>MobNum</MobNum>
+    <Designation>Designation</Designation>
+  </Employee>
+</Company>

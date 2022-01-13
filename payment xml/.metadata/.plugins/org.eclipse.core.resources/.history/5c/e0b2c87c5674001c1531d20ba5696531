@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:template match="/">
+		<!-- TODO: Auto-generated template -->
+		<html>
+         <head>
+            <h1 style="text-align:center; colour:red;">Employee Management System</h1>
+         </head>
+         <body>
+            <table border="0" align="center">
+               <tr>
+                  <th bgcolor="#FFDF00">ID</th>
+                  <th bgcolor="#FFDF00">NAME</th>
+                  <th bgcolor="#FFDF00">AGE</th>
+                  <th bgcolor="#FFDF00">SALARY</th>
+                  <th bgcolor="#FFDF00">EMAIL</th>
+                  <th bgcolor="#FFDF00">MobNum</th>
+                  <th bgcolor="#FFDF00">Designation</th>
+                  <th bgcolor="#FFDF00" >Promotion</th>
+               </tr>
+                <xsl:for-each select = "Company/Employee">
+                    <tr>
+                        <td><xsl:value-of select= "@ID"/></td>
+                        <td><xsl:value-of select= "NAME"/></td>
+                        <td><xsl:value-of select= "AGE"/></td>
+                        <td><xsl:value-of select= "SALARY"/></td>
+                        <td><xsl:value-of select= "EMAIL"/></td>
+                        <td><xsl:value-of select= "MobNum"/></td>
+                        <td><xsl:value-of select= "Designation"/></td>
+                        <xsl:choose>
+                        <xsl:when test="AGE &gt;=50">
+                        	<xsl:apply-templates select="Associate"/>
+                        </xsl:when>
+                          <xsl:when test="(AGE &gt;= 40) and (AGE &lt;=49) ">
+                        	<xsl:apply-templates select="Leader"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                        	<td><xsl:value-of select= "Developer"/></td>
+                        </xsl:otherwise>
+                        </xsl:choose>
+                      </tr>
+                </xsl:for-each>
+             
+            </table>
+         </body>
+      </html>
+</xsl:template>
+<xsl:template match="Associate">
+        <td bgcolor="#FFDF00">Associate Project Manager</td>
+   </xsl:template>
+<xsl:template match="Developer">
+        <td bgcolor="#FFDF00">Developer</td>
+   </xsl:template>
+<xsl:template match="Leader">
+        <td bgcolor="#FFDF00">Team Leader</td>
+</xsl:template>
+</xsl:stylesheet>
