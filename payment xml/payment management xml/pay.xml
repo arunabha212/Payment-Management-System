@@ -54,5 +54,13 @@
     <duration>1</duration>
     <date>2021-06-18</date>
   </order-items>
+  <order-items>
+    <details>E-course</details>
+    <quantity>1</quantity>
+    <price>799</price>
+    <payment-status>pending</payment-status>
+    <duration>1</duration>
+    <date>2021-07-22</date>
+  </order-items>
   
 </order-list>

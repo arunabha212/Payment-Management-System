@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom Manipulation</title>
     <style>
-        table{
+        table {
             text-align: center;
         }
+
         th,
         td {
             text-align: left;
             padding: 8px;
         }
-  
+
         tr:nth-child(even) {
             background-color: #e0e7e4
         }
-  
+
         th {
             background-color: #5d2edf;
             color: white;
         }
-  
+
         .button {
             position: relative;
             text-align: center;
@@ -35,9 +37,9 @@
             border-radius: 30px;
             font-size: 20px;
             width: auto;
-  
+
         }
-  
+
         .button:hover {
             color: rgb(252, 252, 252);
             background: rgb(2, 68, 252);
@@ -47,7 +49,7 @@
         function loadXMLDoc() {
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
-  
+
                 // Request finished and response 
                 // is ready and Status is "OK"
                 if (this.readyState == 4 && this.status == 200) {
@@ -57,7 +59,7 @@
             xmlhttp.open("GET", "pay.xml", true);
             xmlhttp.send();
         }
-  
+
         function payDetails(xml) {
             var i;
             var xmlDoc = xml.responseXML;
@@ -66,35 +68,35 @@
                     <th>Price</th><th>Payment-status</th>
                     <th>Duration</th><th>Date</th>
                 </tr>`;
-                
+
             var x = xmlDoc.getElementsByTagName("order-items");
-            
-  
+
+
             // Start to fetch the data by using TagName 
             for (i = 0; i < x.length; i++) {
                 table += "<tr><td>" +
                     x[i].getElementsByTagName("details")[0]
-                    .childNodes[0].nodeValue + "</td><td>" +
+                        .childNodes[0].nodeValue + "</td><td>" +
                     x[i].getElementsByTagName("quantity")[0]
-                    .childNodes[0].nodeValue + "</td><td>" +
+                        .childNodes[0].nodeValue + "</td><td>" +
                     x[i].getElementsByTagName("price")[0]
-                    .childNodes[0].nodeValue + "</td><td>" +
+                        .childNodes[0].nodeValue + "</td><td>" +
                     x[i].getElementsByTagName("payment-status")[0]
-                    .childNodes[0].nodeValue + "</td><td>" +
+                        .childNodes[0].nodeValue + "</td><td>" +
                     x[i].getElementsByTagName("duration")[0]
-                    .childNodes[0].nodeValue + "</td><td>" +
+                        .childNodes[0].nodeValue + "</td><td>" +
                     x[i].getElementsByTagName("date")[0]
-                    .childNodes[0].nodeValue + "</td></tr>";
+                        .childNodes[0].nodeValue + "</td></tr>";
             }
-  
+
             // Print the xml data in table form
             document.getElementById("table1").innerHTML = table;
         }
 
-        function addElement(){
+        function addElement() {
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
-  
+
                 // Request finished and response 
                 // is ready and Status is "OK"
                 if (this.readyState == 4 && this.status == 200) {
@@ -105,46 +107,135 @@
             xmlhttp.send();
         }
 
-        function addNode(xml)
-        {
+        function addNode(xml) {
             var xmlDoc = xml.responseXML;
             newElement = xmlDoc.createElement("Payment-mode");
             x = xmlDoc.getElementsByTagName("order-items")[0]
             x.appendChild(newElement);
-            let val=xmlDoc.getElementsByTagName("order-items")[0].childNodes[6]="Net Banking";
+            let val = xmlDoc.getElementsByTagName("order-items")[0].childNodes[6] = "Net Banking";
             var i;
             xlen = x.childNodes.length;
             y = x.firstChild;
             txt = "";
             for (i = 0; i < xlen; i++) {
                 if (y.nodeType == 1) {
-                txt += y.nodeName + "<br>";
+                    txt += y.nodeName + "<br>";
+                }
+                y = y.nextSibling;
             }
-            y = y.nextSibling;
-        }
-        document.getElementById("output").innerHTML = txt;
+            document.getElementById("output").innerHTML = txt;
 
             alert('The Element  has been added!');
         }
+
+        function loadXML(filename) {
+            if (window.XMLHttpRequest) {
+                xhttp = new XMLHttpRequest();
+            }
+            else // code for IE5 and IE6 
+            {
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.open("GET", filename, false);
+            xhttp.send();
+            return xhttp.responseXML;
+        }
+        function delnode() {
+            xmlDoc = loadXML("pay.xml");
+
+            txt = "<b>Before remove operation, total order-items node: </b>" + xmlDoc.getElementsByTagName("order-items").length + "<br>";
+
+            x = xmlDoc.getElementsByTagName("order-items")[0];
+            x.parentNode.removeChild(x);
+
+            txt += "<b>After remove operation, total order-items node: </b>" + xmlDoc.getElementsByTagName("order-items").length;
+            document.getElementById("output1").innerHTML = txt;
+
+            alert('The node  has been removed!');
+
+        }
+        function delNodeElement() {
+            xmlDoc = loadXML("pay.xml");
+
+            txt = "Before remove operation, total order-items element nodes: " + xmlDoc.getElementsByTagName("order-items")[0].childNodes.length + "<br>";
+
+            x = xmlDoc.getElementsByTagName("quantity")[0];
+            x.parentNode.removeChild(x);
+
+            txt += "After remove operation, total order-items element nodes: " + xmlDoc.getElementsByTagName("order-items")[0].childNodes.length;
+            document.getElementById("output2").innerHTML = txt;
+
+            alert('The child node has been removed!');
+
+        }
+        function changeNodeElement() {
+            xmlDoc = loadXML("pay.xml");
+            y = xmlDoc.getElementsByTagName("payment-status")[0].childNodes[0];
+            y.nodeValue = "success";
+            console.log(y);
+            var i;
+            var table =
+                `<tr><th>Details</th><th>Quantity</th>
+                    <th>Price</th><th>Payment-status</th>
+                    <th>Duration</th><th>Date</th>
+                </tr>`;
+
+            var x = xmlDoc.getElementsByTagName("order-items");
+
+
+            // Start to fetch the data by using TagName 
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("details")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("quantity")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("price")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("payment-status")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("duration")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("date")[0]
+                        .childNodes[0].nodeValue + "</td></tr>";
+            }
+
+            // Print the xml data in table form
+            document.getElementById("output3").innerHTML = table;
+            alert('The child node has been changed!');
+
+        }
+
     </script>
 </head>
+
 <body>
     <center>
-        <button type="button" class="button" 
-            onclick="loadXMLDoc()">
+        <button type="button" class="button" onclick="loadXMLDoc()">
             Display Payment Status
         </button>
-       
-    </center>
-      
-    <br><br>
-    <table id="table1"></table>
-<button type="button" class="button" 
-    onclick="addElement()">
-    Add new element
-    
-</button>
 
-<p id="output"></p>
+
+
+        <br><br>
+        <table id="table1"></table>
+        <button type="button" class="button" onclick="addElement()">
+            Add new element
+        </button>
+        <p id="output"></p>
+        <button type="button" class="button" onclick="delnode()">
+            Delete a node
+        </button>
+        <p id="output1"></p>
+        <button type="button" class="button" onclick="delNodeElement()">
+            Delete an element from the node
+        </button>
+        <p id="output2"></p>
+        <button type="button" class="button" onclick="changeNodeElement()">
+            Change the value of a node
+        </button>
+        <table id="output3"></table>
+    </center>
 </body>
+
 </html>
