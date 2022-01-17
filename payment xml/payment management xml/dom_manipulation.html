@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+    <style>
+        table{
+            text-align: center;
+        }
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+  
+        tr:nth-child(even) {
+            background-color: #e0e7e4
+        }
+  
+        th {
+            background-color: #5d2edf;
+            color: white;
+        }
+  
+        .button {
+            position: relative;
+            text-align: center;
+            padding: 2px;
+            border: 2px solid rgb(169, 151, 235);
+            background: rgba(249, 250, 250, 0.842);
+            color: rgb(46, 60, 211);
+            outline: none;
+            border-radius: 30px;
+            font-size: 20px;
+            width: auto;
+  
+        }
+  
+        .button:hover {
+            color: rgb(252, 252, 252);
+            background: rgb(2, 68, 252);
+        }
+    </style>
+    <script>
+        function loadXMLDoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+  
+                // Request finished and response 
+                // is ready and Status is "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    payDetails(this);
+                }
+            };
+            xmlhttp.open("GET", "pay.xml", true);
+            xmlhttp.send();
+        }
+  
+        function payDetails(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table =
+                `<tr><th>Details</th><th>Quantity</th>
+                    <th>Price</th><th>Payment-status</th>
+                    <th>Duration</th><th>Date</th>
+                </tr>`;
+                
+            var x = xmlDoc.getElementsByTagName("order-items");
+            
+  
+            // Start to fetch the data by using TagName 
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("details")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("quantity")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("price")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("payment-status")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("duration")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("date")[0]
+                    .childNodes[0].nodeValue + "</td></tr>";
+            }
+  
+            // Print the xml data in table form
+            document.getElementById("table1").innerHTML = table;
+        }
+
+        function addElement(){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+  
+                // Request finished and response 
+                // is ready and Status is "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    addNode(this);
+                }
+            };
+            xmlhttp.open("GET", "pay.xml", true);
+            xmlhttp.send();
+        }
+
+        function addNode(xml)
+        {
+            var xmlDoc = xml.responseXML;
+            newElement = xmlDoc.createElement("Payment-mode");
+            x = xmlDoc.getElementsByTagName("order-items")[0]
+            x.appendChild(newElement);
+            let val=xmlDoc.getElementsByTagName("order-items")[0].childNodes[6]="Net Banking";
+            var i;
+            xlen = x.childNodes.length;
+            y = x.firstChild;
+            txt = "";
+            for (i = 0; i < xlen; i++) {
+                if (y.nodeType == 1) {
+                txt += y.nodeName + "<br>";
+            }
+            y = y.nextSibling;
+        }
+        document.getElementById("output").innerHTML = txt;
+
+            alert('The Element  has been added!');
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <button type="button" class="button" 
+            onclick="loadXMLDoc()">
+            Display Payment Status
+        </button>
+       
+    </center>
+      
+    <br><br>
+    <table id="table1"></table>
+<button type="button" class="button" 
+    onclick="addElement()">
+    Add new element
+    
+</button>
+
+<p id="output"></p>
+</body>
+</html>
