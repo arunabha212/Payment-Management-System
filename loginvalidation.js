@@ -65,14 +65,19 @@ function checkpassword()
 
       return false;
     }
-    re= /[~`!@#$%^&*()-_+={}[]\|\;:"<>,.\/\?]/
+    re= /[ ~`!@#$%^&*()-_+={}[\]\?\;:"<>,.]/
     if (!re.test(password))
     {
         alert("Error: password must contain at least one special character!");
         return false;
     }
+    re=/([A-Za-z0-9~`!@#$%^&*()-_+={}[\]|;:"<>,./\\?])+/
+    if (!re.test(password))
+    {
+        alert("Error: password must contain at least one special character in the middle!");
+        return false;
+    }
   else {
-    alert("Error: Please check that you've entered and confirmed your password!");
-    return false;
+    return true;
   }
 }
