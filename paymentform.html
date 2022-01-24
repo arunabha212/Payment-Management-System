@@ -45,34 +45,34 @@
                 <img height="40" src="https://shoplineimg.com/assets/footer/card_tw_fm_pay.png" />
             </div>
             <!-- Credit Cards tab-->
-            <form class="form" id="tab1">
+            <form class="form" id="tab1" onsubmit=" return validatefields()">
                 <div class="form-group"> <label class="title">
                         <h6>Card Owner</h6>
-                    </label> <input type="text" name="username" placeholder="Card Owner Name" required
-                        class="input-group ">
+                    </label> <input type="text" name="username" placeholder="Card Owner Name" 
+                        class="input-group " id="name" onkeypress="return checkCardOwner(event)">
                 </div>
                 <div class="form-group"> <label class="title">
                         <h6>Credit Card number</h6>
                     </label>
-                    <input class="input-group" placeholder="Card Number">
+                    <input class="input-group" placeholder="Card Number" id="cardno" onkeypress="return checkCardNumber(event)">
                     </input>
                 </div>
                 <div class="form-group"> <label><span class="hidden-xs">
                             <h6>Expiration Date</h6>
                         </span></label>
-                    <div>
-                        <input class="input-group" type="number" placeholder="MM" required> <input type="number"
-                            placeholder="YY" name="" class="input-group" required>
-                    </div>
+                    
+                        <input class="input-group" type="text" placeholder="MM"  id="month" onkeypress="return checkCardNumber(event)"> 
+                        <input type="text" placeholder="YYYY"  class="input-group"  id="year" onkeypress="return checkCardNumber(event)">
+                    
                 </div>
                 <div class="form-group"> <label title="Three digit CV code on the back of your card">
                         <h6>CVV</h6>
-                    </label> <input type="text" required class="input-group" placeholder="Enter CVV">
+                    </label> <input type="text"  class="input-group" placeholder="Enter CVV" id="CVV" onkeypress="return checkCardNumber(event)">
                 </div>
                 <div class="card-footer">
                     <button type="button" class="btn-proceed" onclick="window.location.href='/checkout.html'"> back
                     </button>
-                    <button type="button" class="btn-proceed"> Confirm Payment </button>
+                    <button type="submit" class="btn-proceed"> Confirm Payment </button>
 
                 </div>
             </form>
@@ -86,7 +86,7 @@
                 <div class="form-group"> <label class="title">
                         <h6>Debit Card number</h6>
                     </label>
-                    <input class="input-group" placeholder="Card Number">
+                    <input class="input-group" placeholder="Card Number" type="text">
                     </input>
                 </div>
                 <div class="form-group"> <label><span class="hidden-xs">
@@ -104,7 +104,7 @@
                 <div class="card-footer">
                     <button type="button" class="btn-proceed" onclick="window.location.href='/index.html'"> back
                     </button>
-                    <button type="button" class="btn-proceed"> Confirm Payment </button>
+                    <button type="submit" class="btn-proceed"> Confirm Payment </button>
 
                 </div>
             </form>
@@ -211,7 +211,7 @@
       </footer>
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>   
-        
+      <script src="./cardvalidation.js"></script>
 </body>
 
 </html>

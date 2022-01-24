@@ -346,7 +346,7 @@ a.tab-btn:hover{
   text-align:left;
   font-size: larger;
   height: auto;
-  display:block;
+  
   width: auto;
   background-color: rgb(244, 242, 248);
   padding-top: 5px;
@@ -354,7 +354,6 @@ a.tab-btn:hover{
   border-radius: 0.7rem;
   position: static;
   margin:0 auto;
-  display: block;
   overflow: hidden;
 }
 .form-group{

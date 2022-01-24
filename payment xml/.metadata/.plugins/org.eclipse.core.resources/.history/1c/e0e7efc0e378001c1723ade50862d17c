@@ -14,9 +14,8 @@
 <xs:element name="MobNum" type="mobnum"></xs:element>
 <xs:element name="Designation" type="designation"></xs:element>
 </xs:sequence>
-<xs:attribute name = "ID" type="xs:integer" use = "required"/>
+<xs:attribute name = "cID" type="xs:ID" use = "required"/>
 </xs:complexType>
-
 </xs:element>
 </xs:sequence>
 </xs:complexType>
