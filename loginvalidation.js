@@ -1,7 +1,7 @@
 function validatesignup()
 {
     console.log('Inside fucn');
-    var array=[checkemail(),checkpassword()]
+    var array=[checkemail(),checkpassword(), checksame()]
     console.log(array)
     if (array.includes(false))
     {
@@ -24,7 +24,7 @@ function checkemail()
 {
     var email= document.getElementById('Email').value; 
     const regex1=/^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,8})$/;
-       const regex2= /^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,8})(.[a-z]{1,8})$/;
+    const regex2= /^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,8})(.[a-z]{1,8})$/;
        if(regex1.test(email)||regex2.test(email))
        {
          return true; 
@@ -80,4 +80,16 @@ function checkpassword()
   else {
     return true;
   }
+}
+function checksame()
+{
+    var password= document.getElementById('password').value; 
+    var repassword= document.getElementById('repassword').value; 
+    if(password!=repassword)
+    {
+        alert('Passwords dont match!')
+        return false;
+    }
+    else
+    return true;
 }

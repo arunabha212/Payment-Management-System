@@ -43,7 +43,11 @@ function checkcardname()
                return false;
            }
     else
-    return true;
+    {
+        localStorage.setItem("username", name);    
+        return true;
+    }
+    
 
 }
 
@@ -64,7 +68,10 @@ function checkcardno()
         return false;
     }
     else
-    return true;
+    {
+        sessionStorage.setItem("Card-Number", num);    
+        return true;
+    }
 }
 function Checkluhn(val) {
     var sum = 0;

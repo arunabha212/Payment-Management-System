@@ -24,7 +24,12 @@
             <li><a href="./login.html">Login</a></li>
         </ul>
     </nav>
-
+    <select id="demo" onchange="show()">
+        <option value="Select Color">Select Color</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        </select>
     <div class="parent">
         <div class="child-container">
             <h2>Sign Up/ Login</h2>
@@ -63,7 +68,10 @@
                 <button type="button" class="btn-proceed" onclick="window.location.href='/index.html'"> back
                 </button>
                 <button type="submit" class="btn-proceed"> Sign Up </button>
-
+                <br/>
+                <button type="button" class="btn-proceed" onclick="setCookie()"> Set Cookies </button>
+                <button type="button" class="btn-proceed" onclick="getCookie()"> Read Cookies </button>
+                <button type="button" class="btn-proceed" onclick="remove()"> Clear cookies </button>
                 </div>
             
             </form>
@@ -105,6 +113,7 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="./loginvalidation.js"></script>
+    <script src="./cookies.js"></script>
 </body>
 
 </html>
