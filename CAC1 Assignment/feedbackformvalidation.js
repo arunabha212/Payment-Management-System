@@ -1,7 +1,7 @@
 function validateform()
 {
     console.log('Inside fucn');
-    var array=[checkname(),checkemail(),checkpassword(), checksame()]
+    var array=[checkname(),checkaddress(),checkemail(),checkpassword(), checksame()]
     console.log(array)
     if (!array.includes(false))
     {
@@ -105,4 +105,13 @@ function checksame()
     }
     else
     return true;
+}
+function checkaddress(){
+  if(document.getElementById('address').value=="")
+  {
+    alert('Address cannot be blank!')
+    return false;
+  }
+  else
+  return true;
 }
