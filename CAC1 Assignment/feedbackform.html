@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande";
+        }
+
+        .heading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+        }
+
+        .form-label {
+            padding: 10px;
+        }
+
+        .input-field {
+            width: 45%;
+            border-radius: 5px;
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 5px;
+        }
+        .check-box{
+            padding-left: 27%;
+        }
+        .box-btn {
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            
+            margin: 15px;
+        }
+        
+    </style>
+    <title>Feedback Form</title>
+
+</head>
+
+<body>
+    <form id='feedback-form' onsubmit="return validateform()">
+        <h1 class="heading">Feedback-Form</h1>
+        <div class='box'>
+            <div class='form-label'>Name</div>
+            <input class='input-field' type="text" id='name' onkeypress="return check_name(event)" />
+        </div>
+        <div class='box'>
+            <div class='form-label'>Address</div>
+            <input class='input-field' type="text" id='address' />
+        </div>
+        <div class='box'>
+            <div class='form-label'>Email</div>
+            <input class='input-field' type="text" id="Email"></input>
+        </div>
+        <div class="check-box">
+            <div class='form-label'>What you liked the most about the campus</div>
+            <input type="checkbox" id="student" name="checkbox"value="student">
+            <label for="student"> Student</label><br>
+            <input type="checkbox" id="location" name="checkbox" value="location">
+            <label for="location"> Location</label><br>
+            <input type="checkbox" id="campus" name="checkbox" value="campus">
+            <label for="campus"> campus</label><br>
+            <input type="checkbox" id="atmosphere" name="checkbox" value="atmosphere">
+            <label for="atmosphere"> atmosphere</label><br>
+            <input type="checkbox" id="dorm" name="checkbox" value="dorm">
+            <label for="dorm"> dorm rooms</label><br>
+            <input type="checkbox" id="sports" name="checkbox" value="sports">
+            <label for="sports">sports</label><br>
+        </div>
+        <div class="check-box">
+            <div class='form-label'>What you liked the most about the campus</div>
+            <input type="radio" id="student" name="checkbox"value="student">
+            <label for="student"> friends</label><br>
+            <input type="radio" id="location" name="checkbox" value="location">
+            <label for="location"> televison</label><br>
+            <input type="radio" id="campus" name="checkbox" value="campus">
+            <label for="campus"> other</label><br>
+        </div>
+        <div class='box'>
+            <div class='form-label'>Comments</div>
+            <input class='input-field' type="text" id='Comments' style="height:70px;"/>
+        </div>
+        <div class="box-btn">
+            <button type="submit" class="btn-proceed">Submit</button>
+        <button type="reset" class="btn-proceed" >Reset</button>
+        </div>
+        
+    
+    </form>
+    <script src="./feedbackformvalidation.js"></script>
+</body>
+
+</html>

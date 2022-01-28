@@ -1,4 +1,4 @@
-function validatesignup()
+function validateform()
 {
     console.log('Inside fucn');
     var array=[checkname(),checkemail(),checkpassword(), checksame()]
@@ -9,20 +9,18 @@ function validatesignup()
                     return true;
     } 
     else
-    {
-      console.log(false);
-      return false;
-    }
-    
+    return false;
 } 
-function checkCardOwner(event)
+
+function check_name(event)
 {
     let code=event.which;
             if(code>47 && code<58)
-            return false
+            return false;
             else
             return true;
 }
+
 function checkname()
 {
   var name=document.getElementById('name').value;
@@ -38,9 +36,9 @@ function checkname()
 function checkemail()
 {
     var email= document.getElementById('Email').value; 
-    const regex1=/^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,8})$/;
-    const regex2= /^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,8})(.[a-z]{1,8})$/;
-       if(regex1.test(email)||regex2.test(email))
+    const regex1=/^([a-z0-9\.-]+)@christschool.in$/;
+    //console.log(email);
+       if(regex1.test(email))
        {
          return true; 
        }
