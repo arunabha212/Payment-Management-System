@@ -7,10 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style1.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="./angular.js"></script>
   <title>Payment</title>
 </head>
 
-<body>
+<body ng-app="angular">
   <nav>
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
@@ -35,16 +37,15 @@
           <th width="25%">Details</th>
           <th width="10%">Quantity</th>
           <th width="10%">Price</th>
+          <th width="10%">Payment Status</th>
+          <th width="10%">Date</th>
         </tr>
-        <tr>
-          <td>1 year elite subscription </td>
-          <td>1</td>
-          <td>$99</td>
-        </tr>
-        <tr>
-          <td>Consultation Fees</td>
-          <td>1</td>
-          <td>$150</td>
+        <tr ng-repeat="items in list">
+          <td>{{list.details}}</td>
+          <td>{{list.quantity}}</td>
+          <td>{{list.price}}</td>
+          <td>{{list.paymentstatus}}</td>
+          <td>{{list.date}}</td>
         </tr>
       </table>
       <label class="bill-conc">The total payable amount is :</label>

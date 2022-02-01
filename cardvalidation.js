@@ -24,7 +24,7 @@ function validatefields()
     
     var array=[a,b,c,d]
     console.log(array)
-    if (array.includes(false))
+    if (!array.includes(false))
     {
          console.log(true);
                     return true;
@@ -58,6 +58,8 @@ function checkcardno()
     if (!regex.test(num))
     {
         alert('Not a Valid Card Number')
+        document.getElementById("cardno").style.borderColor="red";
+        document.getElementById("cardno").style.borderWidth="thick";
         return false;
     }
         
