@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="bill">
 
 <head>
   <meta charset="UTF-8">
@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style1.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-  <script src="./angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  
   <title>Payment</title>
 </head>
 
-<body ng-app="angular">
+<body ng-controller="billctrl">
   <nav>
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
@@ -34,21 +34,31 @@
       </strong>
       <table class="bill">
         <tr>
-          <th width="25%">Details</th>
-          <th width="10%">Quantity</th>
-          <th width="10%">Price</th>
-          <th width="10%">Payment Status</th>
-          <th width="10%">Date</th>
+          <th width="25%">Details
+            <br><input type="text" ng-model="search.details" placeholder="Enter details"/>
+          </th>
+          <th width="10%">Quantity
+            <br><input type="text" ng-model="search.quantity" placeholder="Enter quantity"/>
+          </th>
+          <th width="10%">Price
+            <br><input type="text" ng-model="search.price" placeholder="Enter price"/>
+          </th>
+          <th width="10%">Payment Status
+            <br><input type="text" ng-model="search.paymentstatus" placeholder="Enter Status"/>
+          </th>
+          <th width="20%">Date
+            <br><input type="text" ng-model="search.date" placeholder="Enter date"/>
+          </th>
         </tr>
-        <tr ng-repeat="items in list">
-          <td>{{list.details}}</td>
-          <td>{{list.quantity}}</td>
-          <td>{{list.price}}</td>
-          <td>{{list.paymentstatus}}</td>
-          <td>{{list.date}}</td>
+        <tr ng-repeat="item in list | filter:search" >
+          <td>{{item.details|uppercase}}</td>
+          <td>{{item.quantity}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.paymentstatus| capitalisefirstletter}}</td>
+          <td>{{item.date | date:"dd-MM-yyyy"}}</td>
         </tr>
       </table>
-      <label class="bill-conc">The total payable amount is :</label>
+      <label class="bill-conc" >The total payable amount is : &#8377; {{ totalbill() }}</label>
       <div class="ibtn">
         <button class="btn-proceed" onclick="window.location.href='/paymentform.html'">
           Proceed
@@ -91,7 +101,7 @@
   </footer>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <script src="./angular.js"></script>
 </body>
 
 </html>
