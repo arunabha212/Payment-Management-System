@@ -50,12 +50,12 @@
             <br><input type="text" ng-model="search.date" placeholder="Enter date"/>
           </th>
         </tr>
-        <tr ng-repeat="item in list | filter:search" >
+        <tr ng-repeat="item in list | filter:search | orderBy:'price'" >
           <td>{{item.details|uppercase}}</td>
           <td>{{item.quantity}}</td>
-          <td>{{item.price}}</td>
+          <td>{{item.price| currency:"&#8377;":2 }}</td>
           <td>{{item.paymentstatus| capitalisefirstletter}}</td>
-          <td>{{item.date | date:"dd-MM-yyyy"}}</td>
+          <td>{{item.date | showdate}}</td>
         </tr>
       </table>
       <label class="bill-conc" >The total payable amount is : &#8377; {{ totalbill() }}</label>

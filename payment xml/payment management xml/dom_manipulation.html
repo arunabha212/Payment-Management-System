@@ -181,7 +181,7 @@
                 </tr>`;
 
             var x = xmlDoc.getElementsByTagName("order-items");
-
+            console.log(xmlDoc.getElementsByTagName("order-items")[4].getElementsByTagName("details")[0].childNodes[0].nodeValue)
 
             // Start to fetch the data by using TagName 
             for (i = 0; i < x.length; i++) {
