@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="paymentxsl.xsl"?>
+<CHRIST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+
+
+<CHRIST>
+
+<COMPUTER-SCIENCE>
+<STU-NAME>Ramesh</STU_NAME>
+<STU-UNIVERSITY>IITB</STU-UNIVERSITY>
+<STU-PHONE>9874653210</STU-PHONE>
+<STU-EMAIL>ramesh@university.in</STU-EMAIL>
+</COMPUTER-SCIENCE>
+
+<COMPUTER-SCIENCE>
+<STU-NAME>Ramesh</STU_NAME>
+<STU-UNIVERSITY>IITB</STU-UNIVERSITY>
+<STU-PHONE>9874653210</STU-PHONE>
+<STU-EMAIL>ramesh@university.in</STU-EMAIL>
+</COMPUTER-SCIENCE>
+
+<COMPUTER-SCIENCE>
+<STU-NAME>Ramesh</STU_NAME>
+<STU-UNIVERSITY>IITB</STU-UNIVERSITY>
+<STU-PHONE>9874653210</STU-PHONE>
+<STU-EMAIL>ramesh@university.in</STU-EMAIL>
+</COMPUTER-SCIENCE>
+
+</CHRIST>

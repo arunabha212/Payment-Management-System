@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline:none;
+}*
+
+.header{
+height: 80px;;
+
+color: aliceblue;
+background-color:rgb(77, 53, 209);
+}
+.logo{
+    float:left;
+}
+.banner{
+    float:left;
+    padding-top: 15px;
+    padding-left: 350px;
+    text-align: center;
+
+}
+.links-section{
+    float: left;
+    height:750px;
+    width: 200px;
+    background-color:rgb(154, 240, 255);
+    padding: 5px;
+    border-radius: 0.7rem;
+}
+body{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(226, 253, 255);
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande";
+}
+.parent{
+    display:flex;
+    padding-top: 100px;
+    justify-content: center;
+  }
+  .child-container{
+    text-align:center;
+    font-size: larger;
+    float: left;
+    height: auto;
+    width: 800px;
+    background-color: rgb(170, 198, 230);
+    padding: 15px;
+    border-radius: 0.7rem;
+    margin:0 auto;
+    margin-bottom: 250px;
+  }
