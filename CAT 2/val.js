@@ -1,13 +1,13 @@
 function validateform() {
     console.log('Inside fucn');
     if (checkname1()) {
-        if (checkaddress()) {
-            if (checkemail()) {
-                if (checkbranch()) {
-                    if (checkcollege()) {
-                        if (check_age) {
-                            if (checkphn) {
-                                if (checkpassword)
+        if (checkaddress1()) {
+            if (checkemail1()) {
+                if (checkbranch1()) {
+                    if (checkcollege1()) {
+                        if (check_age1()) {
+                            if (checkphn1()) {
+                                if (checkpassword1())
                                     return true;
                             }
                         }
@@ -52,6 +52,54 @@ function checkname1() {
         return true;
     }
 }
+function checkaddress1() {
+    if (!checkaddress()) {
+        document.getElementById("Email").disabled = true;
+        document.getElementById("branch").disabled = true;
+        document.getElementById("college").disabled = true;
+        document.getElementById("Age").disabled = true;
+        document.getElementById("phonenumber").disabled = true;
+        document.getElementById("uname").disabled = true;
+        document.getElementById("password").disabled = true;
+        document.getElementById("repassword").disabled = true;
+        return false;
+    }
+    if (checkaddress()) {
+        document.getElementById("Email").disabled = false;
+        document.getElementById("branch").disabled = false;
+        document.getElementById("college").disabled = false;
+        document.getElementById("Age").disabled = false;
+        document.getElementById("phonenumber").disabled = false;
+        document.getElementById("uname").disabled = false;
+        document.getElementById("password").disabled = false;
+        document.getElementById("repassword").disabled = false;
+        return true;
+    }
+}
+function checkemail1() {
+    if (!checkemail()) {
+        
+        document.getElementById("branch").disabled = true;
+        document.getElementById("college").disabled = true;
+        document.getElementById("Age").disabled = true;
+        document.getElementById("phonenumber").disabled = true;
+        document.getElementById("uname").disabled = true;
+        document.getElementById("password").disabled = true;
+        document.getElementById("repassword").disabled = true;
+        return false;
+    }
+    if (checkemail()) {
+        document.getElementById("branch").disabled = false;
+        document.getElementById("college").disabled = false;
+        document.getElementById("Age").disabled = false;
+        document.getElementById("phonenumber").disabled = false;
+        document.getElementById("uname").disabled = false;
+        document.getElementById("password").disabled = false;
+        document.getElementById("repassword").disabled = false;
+        return true;
+    }
+}
+
 function checkname() {
     var name = document.getElementById('name').value;
     if (name == "") {
@@ -61,6 +109,8 @@ function checkname() {
         return false;
     }
     else {
+        document.getElementById('name').style.borderColor = "green";
+        document.getElementById('name').style.borderWidth = "thick";
         return true;
     }
 }
@@ -69,6 +119,8 @@ function checkemail() {
     const regex1 = /^([a-z0-9\.-]+)@university.in$/;
     //console.log(email);
     if (regex1.test(email)) {
+        document.getElementById('Email').style.borderColor = "green";
+        document.getElementById('Email').style.borderWidth = "thick";
         return true;
 
     }
