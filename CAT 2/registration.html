@@ -29,9 +29,9 @@
                 </tr>`;
 
             var x = xmlDoc.getElementsByTagName("COMPUTER-SCIENCE");
-                console.log(x)
+                console.log(xmlDoc)
 
-            // Start to fetch the data by using TagName 
+           
             for (i = 0; i < x.length; i++) {
                 table += "<tr><td>" +
                     x[i].getElementsByTagName("STU-NAME")[0]
@@ -40,7 +40,7 @@
                         .childNodes[0].nodeValue + "</td><td>";
             }
 
-            // Print the xml data in table form
+            
             document.getElementById("table1").innerHTML = table;
         }
     </script>
