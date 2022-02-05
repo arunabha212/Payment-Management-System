@@ -41,14 +41,7 @@ function checkname1() {
     }
     if (checkname()) {
         document.getElementById("address").disabled = false;
-        document.getElementById("Email").disabled = false;
-        document.getElementById("branch").disabled = false;
-        document.getElementById("college").disabled = false;
-        document.getElementById("Age").disabled = false;
-        document.getElementById("phonenumber").disabled = false;
-        document.getElementById("uname").disabled = false;
-        document.getElementById("password").disabled = false;
-        document.getElementById("repassword").disabled = false;
+        
         return true;
     }
 }
@@ -66,13 +59,7 @@ function checkaddress1() {
     }
     if (checkaddress()) {
         document.getElementById("Email").disabled = false;
-        document.getElementById("branch").disabled = false;
-        document.getElementById("college").disabled = false;
-        document.getElementById("Age").disabled = false;
-        document.getElementById("phonenumber").disabled = false;
-        document.getElementById("uname").disabled = false;
-        document.getElementById("password").disabled = false;
-        document.getElementById("repassword").disabled = false;
+        
         return true;
     }
 }
@@ -90,16 +77,70 @@ function checkemail1() {
     }
     if (checkemail()) {
         document.getElementById("branch").disabled = false;
-        document.getElementById("college").disabled = false;
-        document.getElementById("Age").disabled = false;
-        document.getElementById("phonenumber").disabled = false;
-        document.getElementById("uname").disabled = false;
-        document.getElementById("password").disabled = false;
-        document.getElementById("repassword").disabled = false;
         return true;
     }
 }
-
+function checkbranch1() {
+    if (!checkbranch()) {
+        
+        document.getElementById("college").disabled = true;
+        document.getElementById("Age").disabled = true;
+        document.getElementById("phonenumber").disabled = true;
+        document.getElementById("uname").disabled = true;
+        document.getElementById("password").disabled = true;
+        document.getElementById("repassword").disabled = true;
+        return false;
+    }
+    if (checkbranch()) {
+        document.getElementById("college").disabled = false;
+        return true;
+    }
+}
+function checkcollege1() {
+    if (!checkcollege()) {
+        
+        
+        document.getElementById("Age").disabled = true;
+        document.getElementById("phonenumber").disabled = true;
+        document.getElementById("uname").disabled = true;
+        document.getElementById("password").disabled = true;
+        document.getElementById("repassword").disabled = true;
+        return false;
+    }
+    if (checkcollege()) {
+        document.getElementById("Age").disabled = false;
+        return true;
+    }
+}
+function check_age1() {
+    if (!check_age()) {
+        
+        document.getElementById("phonenumber").disabled = true;
+        document.getElementById("uname").disabled = true;
+        document.getElementById("password").disabled = true;
+        document.getElementById("repassword").disabled = true;
+        return false;
+    }
+    if (check_age()) {
+        document.getElementById("phonenumber").disabled = false;
+        return true;
+    }
+}
+function checkphn1() {
+    if (!checkphn()) {
+        
+        document.getElementById("uname").disabled = true;
+        document.getElementById("password").disabled = true;
+        document.getElementById("repassword").disabled = true;
+        return false;
+    }
+    if (checkphn()) {
+        document.getElementById("uname").disabled = false;
+        document.getElementById("uname").disabled = false;
+        document.getElementById("uname").disabled = false;
+        return true;
+    }
+}
 function checkname() {
     var name = document.getElementById('name').value;
     if (name == "") {
@@ -125,7 +166,7 @@ function checkemail() {
 
     }
     else {
-        alert('Email is not valid!')
+        
         document.getElementById('Email').style.borderColor = "red";
         document.getElementById('Email').style.borderWidth = "thick";
         return false;
@@ -229,11 +270,13 @@ function checkphn() {
     var phn = document.getElementById('phonenumber').value;
     const regex1 = /^\d{10}$/;
     if (regex1.test(phn)) {
+        document.getElementById('phonenumber').style.borderColor = "green";
+        document.getElementById('phonenumber').style.borderWidth = "thick";
         return true;
 
     }
     else {
-        alert('Phone is not valid!')
+        
         document.getElementById('phonenumber').style.borderColor = "red";
         document.getElementById('phonenumber').style.borderWidth = "thick";
         return false;
@@ -243,12 +286,16 @@ function check_age() {
     var age = document.getElementById('Age').value;
     if (age < 0) {
         alert('Age cannot be negative!')
-        document.getElementById('age').style.borderColor = "red";
-        document.getElementById('age').style.borderWidth = "thick";
+        document.getElementById('Age').style.borderColor = "red";
+        document.getElementById('Age').style.borderWidth = "thick";
         return false;
     }
     else
+    {
+        document.getElementById('Age').style.borderColor = "green";
+        document.getElementById('Age').style.borderWidth = "thick";
         return true;
+    }
 }
 
 function checkuname() {
@@ -259,7 +306,14 @@ function checkuname() {
         return false;
     }
     else
+    {
+        document.getElementById('uname').style.borderColor = "green";
+        document.getElementById('uname').style.borderWidth = "thick";
+        document.getElementById("password").disabled = false;
+        document.getElementById("repassword").disabled = false;
         return true;
+    }
+        
 }
 function setCookie() {
     var name = document.getElementById("name").value;
@@ -294,7 +348,12 @@ function checkbranch() {
         return false;
     }
     else
+    {
+        document.getElementById('branch').style.borderColor = "green";
+        document.getElementById('branch').style.borderWidth = "thick";
         return true;
+    }
+        
 }
 function checkcollege() {
     if (document.getElementById('college').value == "") {
@@ -304,5 +363,10 @@ function checkcollege() {
         return false;
     }
     else
+    {
+        document.getElementById('college').style.borderColor = "green";
+        document.getElementById('college').style.borderWidth = "thick";
         return true;
+    }
+        
 }
