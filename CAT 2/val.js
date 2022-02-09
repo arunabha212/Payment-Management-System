@@ -7,8 +7,11 @@ function validateform() {
                     if (checkcollege1()) {
                         if (check_age1()) {
                             if (checkphn1()) {
-                                if (checkpassword1())
+                                if (checkpassword1()){
+                                    alert('Thank You for Registering!!')
                                     return true;
+                                }
+                                   
                             }
                         }
                     }
@@ -141,6 +144,9 @@ function checkphn1() {
         return true;
     }
 }
+function checkpassword1(){
+return checksame();
+}
 function checkname() {
     var name = document.getElementById('name').value;
     if (name == "") {
@@ -191,6 +197,7 @@ function checkaddress() {
     }
     else
         document.getElementById('address').style.borderColor = "green";
+        document.getElementById('address').style.borderWidth = "thick";
         return true;
 }
 function check() {
