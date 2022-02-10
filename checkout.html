@@ -13,7 +13,7 @@
 </head>
 
 <body ng-controller="billctrl">
-  <nav>
+  <!--<nav>
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
       <i class="fas fa-bars"></i>
@@ -25,7 +25,7 @@
       <li><a href="#">Community Forum</a></li>
       <li><a href="#">Login</a></li>
     </ul>
-  </nav>
+  </nav>-->
   <embed type="image/jpg" class="responsive" src="Blog-cover2-1.jpg">
   <div class="icontainer-body">
     <div class="icontainer">
@@ -60,14 +60,14 @@
       </table>
       <label class="bill-conc" >The total payable amount is : &#8377; {{ totalbill() }}</label>
       <div class="ibtn">
-        <button class="btn-proceed" onclick="window.location.href='/paymentform.html'">
+        <button class="btn-proceed" onclick="window.location.href='#/paymentform'">
           Proceed
         </button>
       </div>
     </div>
   </div>
 
-
+<!-- 
   <footer class="footer">
     <div class="waves">
           <div class="wave" id="wave1"></div>
@@ -101,6 +101,7 @@
   </footer>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  -->
   <script src="./angular.js"></script>
 </body>
 

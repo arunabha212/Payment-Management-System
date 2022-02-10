@@ -395,13 +395,13 @@ a.tab-btn:hover{
 
 }
 
-.form:not(:target) {
+/*.form:not(:target) {
   display: none;
 }
 
 .form:target {
   display: block;
-}
+}*/
 
 
 .footer {

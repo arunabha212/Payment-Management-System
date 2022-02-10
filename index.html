@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app" ng-controller="myctrl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,20 +9,20 @@
     <title>Home Page</title>
 </head>
 <body>
-    <nav>
+    <!--<nav>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
           <i class="fas fa-bars"></i>
         </label>
         <label class="logo">Logo</label>
         <ul class="navbar">
-          <li><a class="" href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#/about">About</a></li>
           <li><a href="#">Community Forum</a></li>
-          <li><a href="./login.html">Login</a></li>
+          <li><a href="#/login">Login</a></li>
         </ul>
       </nav>
-      
+    -->
       <div class="container">
             <img
             src="banner.svg"  class="responsive" />
@@ -31,11 +31,12 @@
               <p>Fast Payments</p>
             </div>
             
-          </div>
-        <button class="btn" onclick="window.location.href='/checkout.html'">
+        </div>
+        <button class="btn" onclick="window.location.href='#/checkout'">
             Go to Checkout
         </button>
-        <footer class="footer">
+        
+       <!-- <footer class="footer">
             <div class="waves">
               <div class="wave" id="wave1"></div>
               <div class="wave" id="wave2"></div>
@@ -69,6 +70,6 @@
           <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
           <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         
-       
+        -->
 </body>
 </html>

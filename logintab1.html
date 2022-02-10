@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab1</title>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child-container">
+            <h2>Sign Up</h2>
+            <form class="form"  onsubmit=" return validatesignup()">
+                <div class="form-group"> <label class="title">
+                        <h6>Name</h6>
+                    </label> <input type="text" name="username" placeholder=" Name" class="input-group " id="name"
+                        onkeypress="return checkCardOwner(event)">
+                </div>
+                <div class="form-group"> <label class="title">
+                        <h6>Email ID</h6>
+                    </label>
+                    <input class="input-group" placeholder="abc@xyz.com" id="Email" onkeypress="">
+                    </input>
+                </div>
+                <div class="form-group"> <label><span class="hidden-xs">
+                            <h6>Password</h6>
+                        </span></label>
+
+                    <input class="input-group" type="password" placeholder="password" id="password" onkeypress="">
+
+
+                </div>
+                <div class="form-group"> <label title="Three digit CV code on the back of your card">
+                        <h6>Re-enter pasword</h6>
+                    </label> <input type="password" class="input-group" placeholder="Re-enter password" id="repassword"
+                        onkeypress="">
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn-proceed" onclick="window.location.href='#/'"> back
+                    </button>
+                    <button type="submit" class="btn-proceed"> Sign Up </button>
+                    <br />
+                    <button type="button" class="btn-proceed" onclick="setCookie()"> Set Cookies </button>
+                    <button type="button" class="btn-proceed" onclick="getCookie()"> Read Cookies </button>
+                    <button type="button" class="btn-proceed" onclick="remove()"> Clear cookies </button>
+                </div>
+                <script src="./loginvalidation.js"></script>
+                <script src="./cookies.js"></script>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

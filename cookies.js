@@ -16,7 +16,7 @@ function show() {
     var value = document.getElementById("demo").value;
     if (value != "Select Color") {
         document.bgColor = value;
-        document.cookie = "color=" + value + ";expires=Fri,2 Feb 2022 01:00:00 UTC;";
+        document.cookie = "color=" + value + ";expires=Fri,28 Feb 2022 01:00:00 UTC;";
     }
 }
 window.onload = function () {
@@ -53,6 +53,6 @@ function showimg() {
     console.log(value);
     if (value != "Select Color") {
         document.getElementById('iframe').style.background = 'url(' + value + ') no-repeat';
-        document.cookie = "img=" + value + ";expires=Fri,2 Feb 2022 01:00:00 UTC;";
+        document.cookie = "img=" + value + ";expires=Fri,28 Feb 2022 01:00:00 UTC;";
     }
 }
