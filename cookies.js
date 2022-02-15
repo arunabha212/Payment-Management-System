@@ -1,8 +1,8 @@
 function setCookie() {
     var name = document.getElementById("name").value;
     var email = document.getElementById("Email").value;
-    document.cookie = "username=" + name + ";expires=Fri,29 Jan 2022 04:00:00 UTC;"
-    document.cookie = "emailId=" + email + ";expires=Fri,30 Jan 2022 01:00:00 UTC;";
+    document.cookie = "username=" + name + ";expires=Fri,29 Mar 2022 04:00:00 UTC;"
+    document.cookie = "emailId=" + email + ";expires=Fri,30 Mar 2022 01:00:00 UTC;";
 }
 function getCookie() {
     if (document.cookie.length != 0) {

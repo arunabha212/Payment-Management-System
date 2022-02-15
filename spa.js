@@ -25,9 +25,9 @@ angular.module('app',['ngRoute'])
     {
         templateUrl:'paymentform.html',
         
-    }).when('/login/tab2',
+    }).when('/login/:tab2',
     {
-        templateUrl:'logintab2.html',
+        templateUrl:'login.html',
         controller:'logintab2ctrl'
     })
 })
@@ -42,9 +42,11 @@ angular.module('app',['ngRoute'])
 .controller('loginctrl',function(){
     
 })
-.controller("logintab2ctrl",function($scope)
+.controller("logintab2ctrl",function($scope,$routeParams)
 {
-    $scope.message="Login Page coming soon...!!!!"
+    if($routeParams.tab2)
+        $scope.message="Login Page coming soon...!!!!"
+
 })
 .filter("capitalisefirstletter", function () {
     return function (input) {
@@ -86,7 +88,7 @@ angular.module('app',['ngRoute'])
     }
 })
 .controller("billctrl", function ($scope, $http) {
-    $http.get('https://arunabha212.github.io/JSON/bill.json')
+    $http.get('http://127.0.0.1:7000/getjson')
         .success(function (response) {
             $scope.list = response.billitems;
             $scope.totalbill = function () {
