@@ -88,7 +88,7 @@ angular.module('app',['ngRoute'])
     }
 })
 .controller("billctrl", function ($scope, $http) {
-    $http.get('http://127.0.0.1:7000/getjson')
+    $http.get('http://127.0.0.1:7000/getjson')//https://arunabha212.github.io/JSON/bill.json
         .success(function (response) {
             $scope.list = response.billitems;
             $scope.totalbill = function () {

@@ -37,7 +37,7 @@ angular.module("bill", [])
             month="Dec"
 
             return arr[2]+'-'+month+'-'+arr[0];
-        }
+        }l
     })
     .controller("billctrl", function ($scope, $http) {
         $http.get('https://arunabha212.github.io/JSON/bill.json')
