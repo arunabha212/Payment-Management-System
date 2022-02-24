@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <center>
+        <h1>Add data into table</h1>
+        <form method="POST" action="/add">
+            Enter Registration number:<br><input type="number" name="regno" /><br><br>
+            Enter Name:<br><input type="text" name="name" /><br><br>
+            Enter class:<br><input type="text" name="class" /><br><br>
+            Enter Event Name:<br><input type="text" name="event" /><br><br>
+            Enter Team Name:<br><input type="text" name="team" /><br><br>
+            <input type="submit" value="ADD">
+        </form>
+
+        <h1>Update data</h1>
+        <form method="POST" action="/update">
+            Enter Registration number:<br><input type="number" name="regno" /><br><br>
+            Enter New-Event Name:<br><input type="text" name="event" /><br><br>
+            <input type="submit" value="UPDATE">
+        </form>
+        <h1>Delete data</h1>
+        <form method="POST" action="/delete">
+            Enter Registration number:<br><input type="number" name="regno" /><br><br>
+           
+            <input type="submit" value="DELETE">
+        </form>
+    </center>
+</body>
+</html>

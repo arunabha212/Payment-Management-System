@@ -57,19 +57,19 @@ app.post('/newentry', (req, res) => {
         console.log(err)
     })
 })
-app.post('/edit', (req, res) => {
-    //console.log(req.body)
+// app.post('/edit', (req, res) => {
+//     //console.log(req.body)
     
-    var sql = "UPDATE billitems SET price=" + parseInt(req.body.price) + " WHERE details='"+req.body.details+"'";
-    console.log(sql)
-    var query=connection.query(sql,(err,result)=>
-    {
-        if(!err)
-        res.send("Data has been updated into database!")
-        else
-        console.log(err)
-    })
-})
+//     var sql = "UPDATE billitems SET price=" + parseInt(req.body.price) + " WHERE details='"+req.body.details+"'";
+//     console.log(sql)
+//     var query=connection.query(sql,(err,result)=>
+//     {
+//         if(!err)
+//         res.send("Data has been updated into database!")
+//         else
+//         console.log(err)
+//     })
+// })
 app.post('/edit', (req, res) => {
     //console.log(req.body)
     

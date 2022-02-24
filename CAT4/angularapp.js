@@ -1,0 +1,10 @@
+angular.module('myapp',[])
+.controller('ctrldetails',function($scope,$http)
+{
+    $http.get('http://127.0.0.1:7000/getjson')
+    .success(function(response)
+    {
+        $scope.table=response;
+        $scope.count=$scope.table.length;
+    })
+})

@@ -49,7 +49,7 @@ angular.module('app',['ngRoute'])
 
 })
 .filter("capitalisefirstletter", function () {
-    return function (input) {
+    return function (input) { 
         return input.substring(0, 1).toUpperCase() + input.substring(1);
     }
 })
